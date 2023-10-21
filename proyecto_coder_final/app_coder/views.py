@@ -111,7 +111,7 @@ def search_record(request):
 
 def update_profile(request):
     if request.user.is_authenticated:
-        current_user = User.profile_set.get(id=request.user.id)
+        current_user = User.objects.get(id=request.user.id)
         form = EditUserForm(request.POST or None, request.FILES or None, instance=current_user)
         if form.is_valid():
             form.save()

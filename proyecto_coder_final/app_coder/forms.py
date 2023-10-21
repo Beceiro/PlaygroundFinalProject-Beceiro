@@ -15,7 +15,7 @@ class SignUpForm(UserCreationForm, forms.Form):
 
 	class Meta:
 		model = User
-		fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', 'image','description')
+		fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
 
 	def __init__(self, *args, **kwargs):
@@ -54,12 +54,9 @@ class AddRecordForm(forms.ModelForm):
 		exclude = ('user',)
   
 class EditUserForm(UserChangeForm, SignUpForm, forms.Form):
-	image = forms.ImageField(label="Picture", required=False)
-	description = forms.CharField(required=False, widget=CKEditorWidget())
-
 	class Meta:
 		model = User
-		fields = ( 'username', 'first_name', 'last_name', 'email', 'password1', 'password2', 'image','description')
+		fields = ( 'username', 'first_name', 'last_name', 'email', 'password1', 'password2', 'image', 'description')
         
 	def __init__(self, *args, **kwargs):
 		super(EditUserForm, self).__init__(*args, **kwargs)
