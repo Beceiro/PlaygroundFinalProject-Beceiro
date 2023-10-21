@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+    <strong> {{ customer_record.first_name }} 
+		{{ customer_record.last_name }} - ID: </strong>{{ customer_record.id }}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <p class="card-text">
+        <strong>Email: </strong>{{ customer_record.email }}
+      </p>
+    </li>
+    <li class="list-group-item">
+      <p class="card-text">
+        <strong>Phone: </strong>{{ customer_record.phone }}
+        </p>
+    </li>
+    <li class="list-group-item">
+      <p class="card-text">
+        <strong>Address: </strong>{{ customer_record.address }}
+        </p>
+    </li>
+    <li class="list-group-item">
+      <p class="card-text">
+        <strong>City: </strong>{{ customer_record.city }}
+        </p>
+    </li>
+    <li class="list-group-item">
+      <p class="card-text">
+        <strong>State: </strong>{{ customer_record.state }}
+        </p>
+    </li>
+    <li class="list-group-item">
+      <p class="card-text">
+        <strong>Zipcode: </strong>{{ customer_record.zipcode }}
+        </p>
+    </li>
+    <li class="list-group-item">
+      <p class="card-text">
+        <strong>Create At: </strong>{{ customer_record.created_at }}</p>
+        </p>
+    </li>
+    <li class="list-group-item">      
+        <p class="card-text">
+          {% if customer_record.description %}
+          <strong>Description: </strong>{{customer_record.description}}
+          {% endif %}
+        </p>
+    </li>
+  </ul>
+  <p class="card-text align-self-center">
+    {% if customer_record.image %}
+    <img src="{{customer_record.image.url}}" class="my-4 img-thumbnail">
+    {% endif %}
+  </p>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update</a>
+		
+
+{% endblock %}

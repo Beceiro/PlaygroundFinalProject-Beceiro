@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3 text-decoration-underline">
+    <h3>Search Record</h3>
+    <br/>
+    {% if searched %}
+
+    <div class="alert alert-dark" role="alert">
+        Results for: {{searched}}
+      </div>
+    
+    <br>
+    <br>
+        {% for record in records %}
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a href="{% url 'record' record.id %}">{{record}}</li>
+        </ul>
+      </div>
+        {% endfor %}
+    {% comment %} <ul>
+        {% for record in records %}
+
+        <li> <a href="{% url 'record' record.id %}">{{record}}</a> </li>
+        
+        {% endfor %}
+    </ul>
+    </br> {% endcomment %}
+    {% else %}
+
+    <h1>Forgot to search</h1>
+    
+    {% endif %}
+
+{% endblock %}
