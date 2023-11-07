@@ -2,7 +2,7 @@
 
 Este proyecto es desarrollado en Python utilizando el framework Django.
 
-El proyecto trata de una app web sobre una Veterinaria, la cual renderiza la informacion que esta almacenadas en la base de datos y la muesta en las diferentes vistas dependiendo cual sea la solicitud. Debajo se encuentra el link para ver la app en funcionamiento.
+El proyecto trata de una app web sobre una base de datos, la cual renderiza la informacion que esta almacenadas en la base de datos y la muesta en las diferentes vistas dependiendo cual sea la solicitud. Debajo se encuentra el link para ver la app en funcionamiento.
 
 ----
 
