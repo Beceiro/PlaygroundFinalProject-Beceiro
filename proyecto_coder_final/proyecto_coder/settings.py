@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_coder',
-    'ckeditor',
-    'ckeditor_uploader',
+    'accounts',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -129,6 +129,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CKEDITOR_BASEPATH = "static/ckeditor"
-CKEDITOR_UPLOAD_PATH = "static/ckeditor/uploads/"

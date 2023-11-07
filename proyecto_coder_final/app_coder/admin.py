@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Record
+from app_coder.models import Record
+from accounts.models import Profile
 
 admin.site.register(Record)
+admin.site.register(Profile)
 

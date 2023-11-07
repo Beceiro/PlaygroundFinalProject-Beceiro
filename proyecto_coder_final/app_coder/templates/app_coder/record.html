@@ -40,13 +40,13 @@
     </li>
     <li class="list-group-item">
       <p class="card-text">
-        <strong>Create At: </strong>{{ customer_record.created_at }}</p>
+        <strong>Created At: </strong>{{ customer_record.created_at }}</p>
         </p>
     </li>
     <li class="list-group-item">      
         <p class="card-text">
           {% if customer_record.description %}
-          <strong>Description: </strong>{{customer_record.description}}
+          <strong>Description: </strong>{{customer_record.description | safe}}
           {% endif %}
         </p>
     </li>

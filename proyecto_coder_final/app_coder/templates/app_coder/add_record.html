@@ -5,9 +5,8 @@
 <h1>Add Record</h1>
 <br/>
 
-<form method="POST" action="{% url 'add_record' %}">
+<form method="POST" action="" enctype="multipart/form-data">
 	{% csrf_token %}
-
 	{{ form.as_p }}
 
 <br/>

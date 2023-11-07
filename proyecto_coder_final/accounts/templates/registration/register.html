@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
 {% block content %}
 
 
 <div class="col-md-6 offset-md-3 text-decoration-underline">
 <h1>Register</h1>
 <br/>
-
 <form method="POST" action="" enctype="multipart/form-data">
 	{% csrf_token %}
-
-	{{ form.as_p }}
-
+	<table>
+		{{ form.media }}
+		{{ form.as_p }}
+	</table>
 	<br/>
 	  <button type="submit" class="btn btn-secondary">Register</button>
-	</form>
+</form>
 
 
 

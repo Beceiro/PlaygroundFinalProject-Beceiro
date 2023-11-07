@@ -38,7 +38,7 @@
 
 {% else %}
     <div class="alert alert-secondary" role="alert">
-      No records avilable
+      <p>No records avilable</p>
     </div>
 {% endif %}
 	  </tbody>
@@ -46,28 +46,9 @@
 
 {% else %}
 
-<h1><a href="{% url "login" %}">Please login to access</a></h1>
-
-{% comment %} <div class="col-md-6 offset-md-3">
-<h1>Login</h1>
-<br/>
-
-<form method="POST" action="{% url 'home' %}">
-	{% csrf_token %}
-
-  <div class="mb-3">
-    <input type="text" class="form-control" name="username", placeholder="Username" required>
-    
-  </div><br/>
-  <div class="mb-3">
-    <input type="password" class="form-control" name="password", placeholder="Password" required>
-  </div>
-  <br/>
-  <button type="submit" class="btn btn-secondary">Login</button>
-
-</form> {% endcomment %}
-
-
+<div class="alert alert-secondary" role="alert">
+  <h3><a href="{% url "login" %}">Please login to access</a></h3>
+</div>
 
 {% endif %}
 

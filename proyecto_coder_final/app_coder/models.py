@@ -1,6 +1,14 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     image = models.ImageField(default='images.png',upload_to='avatar/uploads/', null = True)
+#     description = RichTextField(null=True, blank=True)
+    
+#     def __str__(self):
+#         return f'{self.user.username} Profile'
 
 
 class Record(models.Model):
@@ -18,7 +26,3 @@ class Record(models.Model):
 
 	def __str__(self):
 		return(f"{self.first_name} {self.last_name}")
-
-class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
-    image = models.ImageField(upload_to='avatar/', null = True, blank = True)

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3 text-decoration-underline">
+	<h1>Profile</h1>
+</div>
+
+<div class="card">
+	<div class="card-header">
+	  <strong> {{ user_info.first_name }} 
+		  {{ user_info.last_name }} - ID: </strong>{{ user_info.id }}
+	</div>
+	<ul class="list-group list-group-flush">
+	  <li class="list-group-item">
+		<p class="card-text">
+		  <strong>Email: </strong>{{user_info.email}}
+		</p>
+	  </li>
+	  <li class="list-group-item">
+		<p class="card-text">
+		  <strong>Link: </strong><a href={{current_user.link.url}}>{{current_user.link}}</a>
+		  </p>
+	  </li>
+	  <li class="list-group-item">      
+		  <p class="card-text">
+			<strong>Description: </strong>{{current_user.description | safe}}
+		  </p>
+	  </li>
+	</ul>
+	<p class="card-text align-self-center">
+	  <img src="{{current_user.image.url}}" class="my-4 img-thumbnail">
+	</p>
+  </div>
+<br>
+<div class="col-md-6 offset-md-3 text-decoration-underline">
+	<h3>Edit personal info</h3>
+</div>
+<div>
+	<form method="POST" action="" enctype="multipart/form-data"> 
+		{% csrf_token %}
+		{{ form.media }}
+		{{ form.as_p }}
+		<br/>
+		<button type="submit" class="btn btn-secondary">Update</button>
+	</form>
+</div>
+{% comment %} <div class="card">
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			<p class="card-text">
+			<form method="POST" action="" enctype="multipart/form-data"> 
+				{% csrf_token %}
+				{{ form.media }}
+				{{ form.as_p }}
+				<br/>
+				<button type="submit" class="btn btn-secondary">Update</button>
+			</form>
+			</p>
+		</li>
+	<br/>
+</div> {% endcomment %}
+
+{% endblock %}
